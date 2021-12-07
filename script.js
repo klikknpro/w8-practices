@@ -1,17 +1,13 @@
-const ages = [2, 4, 8, 14];
-const map1 = ages.map((x) => x * 2);
+const numbers = [2, 1, 3, 4, 5];
+let minimum = numbers[0];
 
-console.log(map1);
-
-const array2 = [2, 4, 8, 14];
-const map2 = array2.map(myFunction);
-function myFunction(num) {
-  return num * 5;
+for (let i = 0; i < numbers.length; i++) {
+  if (minimum > numbers[i]) {
+    minimum = numbers[i];
+  }
 }
+// console.log(minimum);
 
-console.log(map2);
-
-const array3 = [2, 4, 8, 14];
-const map3 = array3.map((x, i) => x * i);
-
-console.log(map3);
+const reducer = (prev, curr) => Math.min(prev, curr);
+minimum = numbers.reduce(reducer);
+console.log("a minimum ez lesz: ", minimum);
