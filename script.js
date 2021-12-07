@@ -1,13 +1,27 @@
-const numbers = [2, 1, 3, 4, 5];
-let minimum = numbers[0];
+let person = {
+  firstName: "Jon",
+  lastName: "Doe",
+  address: {
+    street: "valami",
+    city: "BP",
+    country: "hun",
+  },
+};
 
-for (let i = 0; i < numbers.length; i++) {
-  if (minimum > numbers[i]) {
-    minimum = numbers[i];
-  }
-}
-// console.log(minimum);
+const p1 = { ...person };
+console.log(p1);
 
-const reducer = (prev, curr) => Math.min(prev, curr);
-minimum = numbers.reduce(reducer);
-console.log("a minimum ez lesz: ", minimum);
+const p2 = Object.assign({}, person);
+console.log(person);
+console.log(p2);
+
+p2.firstName = "jane";
+p2.address.street = "main";
+console.log(p2);
+
+const p3 = JSON.parse(JSON.stringify(person));
+console.log(p3);
+p3.firstName = "jane";
+p3.address.street = "main";
+
+// aaaaaaand im lost....
