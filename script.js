@@ -1,17 +1,21 @@
-function init() {
-  const multiply = function (callback) {
-    return callback(2, 3) * 10;
-  };
+const ages = [32, 33, 16, 40];
 
-  const add = function (a, b) {
-    return a + b;
-  };
-
-  const sub = function (a, b) {
-    return a - b;
-  };
-
-  console.log(multiply(add));
+function testFor() {
+  const resultArr = [];
+  for (const age of ages) {
+    if (age >= 18) {
+      resultArr.push(age);
+    }
+  }
+  return resultArr;
 }
 
-window.addEventListener("load", init);
+// console.log(testFor());
+
+const result = ages.filter(checkAdult);
+
+function checkAdult(age) {
+  return age >= 18;
+}
+
+console.log(result);
